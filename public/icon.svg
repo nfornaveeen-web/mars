@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Mars Technology Inc favicon — crimson tile, cream "M".
+       Colors mirror the app's CSS tokens: primary #A31D1D, background #FEF9E1 -->
+  <rect width="256" height="256" rx="24" fill="#A31D1D" />
+  <text
+    x="128"
+    y="196"
+    text-anchor="middle"
+    font-family="Anton, Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
+    font-weight="900"
+    font-size="190"
+    fill="#FEF9E1"
+  >M</text>
+</svg>
