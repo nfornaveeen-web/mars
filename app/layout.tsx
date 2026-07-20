@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Anton } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
+import SchemePicker from "@/components/scheme-picker";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 import "./globals.css";
 
@@ -139,6 +140,11 @@ export default function RootLayout({
             __html: JSON.stringify(websiteJsonLd),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var s=localStorage.getItem("mars-scheme");if(s&&s!=="gallery-rust")document.documentElement.dataset.scheme=s}catch(e){}`,
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider
@@ -148,6 +154,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <SchemePicker />
         </ThemeProvider>
         <Analytics />
       </body>
