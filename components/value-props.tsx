@@ -75,9 +75,9 @@ const pillars = [
 
 const proofStats = [
   {
-    value: "20+",
-    label: "Years in wholesale electronics",
-    detail: "Founded in 2004 and still focused on B2B distribution.",
+    value: "9",
+    label: "Global brands distributed",
+    detail: "Apple, Samsung, Google, and more under one roof.",
   },
   {
     value: "50K+",
@@ -281,10 +281,9 @@ export default function ValueProps() {
               </h3>
 
               <p className="mt-5 max-w-lg font-sans text-sm font-light leading-relaxed text-background/70 sm:text-base">
-                Mars Technology Inc has served wholesale buyers since 2004,
-                supports North American demand with a broad inventory mix, and
-                keeps bulk orders moving with dedicated account handling and
-                rapid processing.
+                Mars Technology Inc supports North American demand with a
+                broad inventory mix and keeps bulk orders moving with
+                dedicated account handling and rapid processing.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">

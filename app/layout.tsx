@@ -16,7 +16,6 @@ const organizationJsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   logo: absoluteUrl("/marstechnologyinc-logo.svg"),
-  foundingDate: "2004",
   description: siteConfig.description,
   areaServed: ["CA", "US"],
   address: {

@@ -74,7 +74,6 @@ const FEATURED_PRODUCTS = [
 const TICKER_PHRASES = [
   "Wholesale Electronics",
   "Canada + USA",
-  "Since 2004",
   "1,000+ SKUs",
   "Same-Day Processing",
 ];

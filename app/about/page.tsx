@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "About Mars Technology Inc",
   description:
-    "Learn how Mars Technology Inc supports retailers, resellers, and distribution partners with 20+ years of wholesale electronics experience across North America.",
+    "Learn how Mars Technology Inc supports retailers, resellers, and distribution partners with dependable wholesale electronics distribution across North America.",
   path: "/about",
   keywords: [
     "about Mars Technology Inc",
@@ -18,7 +18,7 @@ export const metadata = buildMetadata({
 });
 
 const stats = [
-  { value: "20+", label: "Years in wholesale" },
+  { value: "9", label: "Global brands carried" },
   { value: "50K+", label: "Customers served" },
   { value: "1000+", label: "SKUs in stock" },
   { value: "24/7", label: "Support coverage" },
@@ -69,8 +69,8 @@ export default function About() {
             Built for wholesale.
           </h1>
           <p className="mt-8 max-w-3xl text-lg font-light leading-snug text-foreground sm:text-2xl">
-            Pioneering wholesale electronics distribution across North America
-            since 2004.
+            Pioneering wholesale electronics distribution across North
+            America.
           </p>
         </section>
 
@@ -117,11 +117,11 @@ export default function About() {
           </div>
           <div className="space-y-5 lg:col-span-9">
             <p className="max-w-3xl text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
-              Founded in 2004, Mars Technology Inc emerged from a simple
-              vision: to revolutionize wholesale electronics distribution by
-              combining competitive pricing with exceptional customer service.
-              Over two decades, we've grown to serve over 50,000 satisfied
-              customers across Canada and the United States.
+              Mars Technology Inc emerged from a simple vision: to
+              revolutionize wholesale electronics distribution by combining
+              competitive pricing with exceptional customer service. Today we
+              serve over 50,000 satisfied customers across Canada and the
+              United States.
             </p>
             <p className="max-w-3xl text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
               Our expertise spans mobile phones, tablets, smart devices, and
