@@ -73,10 +73,11 @@ const FEATURED_PRODUCTS = [
 ];
 
 const TICKER_PHRASES = [
-  "Wholesale Electronics",
+  "Wholesale Gravity",
   "Canada + USA",
   "1,000+ SKUs",
   "Same-Day Processing",
+  "Flagship Electronics",
 ];
 
 function Ticker() {

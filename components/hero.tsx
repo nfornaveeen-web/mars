@@ -28,15 +28,17 @@ export default function Hero() {
 
         {/* Poster headline */}
         <h1 className="mt-6 max-w-6xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:mt-8 sm:text-6xl lg:text-8xl">
-          The supply line for{" "}
-          <span className="text-primary">flagship electronics.</span>
+          Big brands. By the pallet.{" "}
+          <span className="text-primary">Bigger margins.</span>
         </h1>
 
         {/* Standfirst + CTAs */}
         <div className="mt-8 grid grid-cols-12 items-end gap-x-6 gap-y-6 sm:mt-10">
           <p className="col-span-12 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base md:col-span-7">
-            iPhone to Pixel, Galaxy to JBL — verified, factory-sealed stock
-            for retailers, resellers, and distributors across North America, with same-day processing on every bulk order.
+            Stock the shelves that sell: iPhone to Pixel, Galaxy to JBL —
+            verified, factory-sealed inventory for retailers, resellers, and
+            distributors across North America, with same-day processing on
+            every bulk order.
           </p>
           <div className="col-span-12 flex flex-col gap-3 sm:flex-row sm:items-center md:col-span-5 md:justify-end">
             <Link
