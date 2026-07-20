@@ -1,26 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Parallax from "@/components/parallax";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const onTimeUpdate = () => {
-      if (video.currentTime >= 124) {
-        video.currentTime = 0;
-        video.play();
-      }
-    };
-    video.addEventListener("timeupdate", onTimeUpdate);
-    return () => video.removeEventListener("timeupdate", onTimeUpdate);
-  }, []);
-
   return (
     <section className="relative bg-background pt-8 pb-14 sm:pt-12 sm:pb-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -65,11 +49,11 @@ export default function Hero() {
         <div className="relative overflow-hidden border-2 border-foreground bg-foreground ring-1 ring-primary/40">
           <div className="relative aspect-video md:aspect-auto md:h-152 lg:h-168 xl:h-176">
             <video
-              ref={videoRef}
-              className="block h-full w-full object-contain object-center md:object-cover"
-              src="/products/New_things_on_the_way_from_Apple_720P.mp4"
+              className="block h-full w-full object-cover object-center"
+              src="/hero/4183c37d-0b3f-4c98-950f-834e7087960f.mp4"
               autoPlay
               muted
+              loop
               playsInline
             />
           </div>
