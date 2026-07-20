@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
   <!-- Mars Technology Inc — text-based editorial wordmark.
-       Colors mirror the app's CSS tokens: primary #C1440E, background #F5E7D3, foreground #2B1A12 -->
-  <rect width="800" height="320" fill="#F5E7D3" />
+       Colors mirror the app's CSS tokens: primary #C1440E, background #FFFFFF, foreground #1A1210 -->
+  <rect width="800" height="320" fill="#FFFFFF" />
   <rect x="0" y="0" width="800" height="14" fill="#C1440E" />
-  <rect x="0" y="306" width="800" height="14" fill="#2B1A12" />
+  <rect x="0" y="306" width="800" height="14" fill="#1A1210" />
   <text
     x="400"
     y="185"
@@ -22,6 +22,6 @@
     font-weight="700"
     font-size="34"
     letter-spacing="16"
-    fill="#2B1A12"
+    fill="#1A1210"
   >TECHNOLOGY INC.</text>
 </svg>
