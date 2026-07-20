@@ -24,7 +24,7 @@ import {
 export const metadata = buildMetadata({
   title: "Wholesale Electronics Distributor in Canada & USA",
   description:
-    "Mars Technology Inc supplies bulk smartphones, tablets, audio devices, displays, accessories, and liquidation inventory to retailers, resellers, and distributors across Canada and the United States.",
+    "Mars Technology Inc supplies bulk smartphones, tablets, audio devices, displays, accessories, and liquidation inventory to retailers, resellers, and distributors across North America.",
   path: "/",
   keywords: [
     "wholesale electronics distributor",

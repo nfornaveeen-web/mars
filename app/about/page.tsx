@@ -120,8 +120,7 @@ export default function About() {
               Mars Technology Inc emerged from a simple vision: to
               revolutionize wholesale electronics distribution by combining
               competitive pricing with exceptional customer service. Today we
-              serve over 50,000 satisfied customers across Canada and the
-              United States.
+              serve over 50,000 satisfied customers across North America.
             </p>
             <p className="max-w-3xl text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
               Our expertise spans mobile phones, tablets, smart devices, and

@@ -36,8 +36,7 @@ export default function Hero() {
         <div className="mt-8 grid grid-cols-12 items-end gap-x-6 gap-y-6 sm:mt-10">
           <p className="col-span-12 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base md:col-span-7">
             iPhone to Pixel, Galaxy to JBL — verified, factory-sealed stock
-            for retailers, resellers, and distributors across Canada and the
-            United States, with same-day processing on every bulk order.
+            for retailers, resellers, and distributors across North America, with same-day processing on every bulk order.
           </p>
           <div className="col-span-12 flex flex-col gap-3 sm:flex-row sm:items-center md:col-span-5 md:justify-end">
             <Link

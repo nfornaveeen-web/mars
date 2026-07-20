@@ -59,7 +59,7 @@ const pillars = [
     items: [
       "Same-day order processing and rapid fulfillment",
       "Dedicated account management for bulk orders",
-      "Tracked delivery across Canada and the United States",
+      "Tracked delivery across North America",
     ],
     cardClassName: "border-warning/20 bg-warning/10",
     iconClassName: "bg-card text-warning",
@@ -214,7 +214,7 @@ export default function ValueProps() {
             <p className="col-span-12 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base lg:col-span-5">
               Premium devices, verified stock, and dependable wholesale
               fulfillment for retailers, resellers, distributors, and
-              liquidation buyers across Canada and the United States.
+              liquidation buyers across North America.
             </p>
           </div>
 
