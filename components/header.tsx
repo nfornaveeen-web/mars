@@ -3,9 +3,44 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Search, Menu, X } from "lucide-react"
+import { Search, Menu, X, Sun, Moon, Monitor } from "lucide-react"
+import { useTheme } from "next-themes"
 import { TopBar } from "@/components/top-bar"
 import { cn } from "@/lib/utils"
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const current = mounted ? (theme ?? "system") : "system"
+  const next =
+    current === "light" ? "dark" : current === "dark" ? "system" : "light"
+  const Icon = !mounted
+    ? Monitor
+    : current === "light"
+      ? Sun
+      : current === "dark"
+        ? Moon
+        : Monitor
+
+  return (
+    <button
+      type="button"
+      aria-label={
+        mounted ? `Theme: ${current}. Switch to ${next}` : "Toggle theme"
+      }
+      title={mounted ? `Theme: ${current} — click for ${next}` : undefined}
+      onClick={() => setTheme(next)}
+      className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground transition-colors hover:bg-foreground hover:text-background"
+    >
+      <Icon className="h-4 w-4" />
+    </button>
+  )
+}
 
 export default function Header() {
   const [isSearchFocused, setIsSearchFocused] = React.useState(false)
@@ -92,6 +127,8 @@ export default function Header() {
                 onBlur={() => setIsSearchFocused(false)}
               />
             </div>
+
+            <ThemeToggle />
 
             <Link
               href="/contact"
