@@ -4,89 +4,90 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Two-tone brand palette — Crimson Red #A31D1D / Cream #FEF9E1 */
-  --background: oklch(0.98 0.032 97.3); /* Cream #FEF9E1 */
-  --foreground: oklch(0.24 0.06 30); /* deep red-brown near-black */
-  --card: oklch(0.992 0.018 95);
-  --card-foreground: oklch(0.24 0.06 30);
-  --popover: oklch(0.992 0.018 95);
-  --popover-foreground: oklch(0.24 0.06 30);
-  --primary: oklch(0.464 0.169 26.9); /* Crimson Red #A31D1D */
-  --primary-foreground: oklch(0.98 0.032 97.3);
-  --secondary: oklch(0.955 0.035 95);
-  --secondary-foreground: oklch(0.3 0.08 28);
-  --muted: oklch(0.955 0.03 95);
-  --muted-foreground: oklch(0.48 0.07 34);
-  --accent: oklch(0.464 0.169 26.9); /* Crimson Red #A31D1D */
-  --accent-foreground: oklch(0.98 0.032 97.3);
+  /* Martian Rust — regolith #F5E7D3 / iron-oxide rust #C1440E / umber #2B1A12 / dust orange #E07A3F */
+  --background: oklch(0.934 0.031 77); /* Regolith #F5E7D3 */
+  --foreground: oklch(0.238 0.031 46); /* Umber #2B1A12 */
+  --card: oklch(0.955 0.025 79);
+  --card-foreground: oklch(0.238 0.031 46);
+  --popover: oklch(0.955 0.025 79);
+  --popover-foreground: oklch(0.238 0.031 46);
+  --primary: oklch(0.555 0.17 39.3); /* Rust #C1440E */
+  --primary-foreground: oklch(0.955 0.028 78);
+  --secondary: oklch(0.905 0.033 76);
+  --secondary-foreground: oklch(0.3 0.04 45);
+  --muted: oklch(0.905 0.03 76);
+  --muted-foreground: oklch(0.46 0.045 48);
+  --accent: oklch(0.555 0.17 39.3); /* Rust #C1440E */
+  --accent-foreground: oklch(0.955 0.028 78);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --success: oklch(0.6 0.13 155);
-  --success-foreground: oklch(0.98 0.01 150);
-  --warning: oklch(0.72 0.15 65);
-  --warning-foreground: oklch(0.28 0.05 60);
-  --info: oklch(0.58 0.11 240);
-  --info-foreground: oklch(0.98 0.01 240);
-  --overlay: oklch(0.2 0.05 30 / 0.55);
-  --border: oklch(0.9 0.038 92);
-  --input: oklch(0.9 0.038 92);
-  --ring: oklch(0.464 0.169 26.9);
-  --chart-1: oklch(0.464 0.169 26.9); /* Crimson */
-  --chart-2: oklch(0.62 0.16 30);
-  --chart-3: oklch(0.36 0.12 28); /* Maroon */
-  --chart-4: oklch(0.8 0.08 80);
-  --chart-5: oklch(0.93 0.04 95); /* Cream */
+  --success: oklch(0.58 0.12 150);
+  --success-foreground: oklch(0.97 0.01 150);
+  --warning: oklch(0.683 0.146 48.5); /* Dust orange #E07A3F */
+  --warning-foreground: oklch(0.25 0.04 50);
+  --info: oklch(0.56 0.09 235);
+  --info-foreground: oklch(0.97 0.01 240);
+  --overlay: oklch(0.2 0.03 46 / 0.55);
+  --border: oklch(0.855 0.032 74);
+  --input: oklch(0.855 0.032 74);
+  --ring: oklch(0.555 0.17 39.3);
+  --chart-1: oklch(0.555 0.17 39.3); /* Rust */
+  --chart-2: oklch(0.683 0.146 48.5); /* Dust orange */
+  --chart-3: oklch(0.4 0.1 42); /* Deep oxide */
+  --chart-4: oklch(0.8 0.06 72); /* Pale regolith */
+  --chart-5: oklch(0.238 0.031 46); /* Umber */
   --radius: 0.375rem;
-  --sidebar: oklch(0.98 0.032 97.3);
-  --sidebar-foreground: oklch(0.24 0.06 30);
-  --sidebar-primary: oklch(0.464 0.169 26.9);
-  --sidebar-primary-foreground: oklch(0.98 0.032 97.3);
-  --sidebar-accent: oklch(0.955 0.035 95);
-  --sidebar-accent-foreground: oklch(0.3 0.08 28);
-  --sidebar-border: oklch(0.9 0.038 92);
-  --sidebar-ring: oklch(0.464 0.169 26.9);
+  --sidebar: oklch(0.934 0.031 77);
+  --sidebar-foreground: oklch(0.238 0.031 46);
+  --sidebar-primary: oklch(0.555 0.17 39.3);
+  --sidebar-primary-foreground: oklch(0.955 0.028 78);
+  --sidebar-accent: oklch(0.905 0.033 76);
+  --sidebar-accent-foreground: oklch(0.3 0.04 45);
+  --sidebar-border: oklch(0.855 0.032 74);
+  --sidebar-ring: oklch(0.555 0.17 39.3);
 }
 
 .dark {
-  --background: oklch(0.17 0.03 28);
-  --foreground: oklch(0.95 0.03 95); /* Cream text */
-  --card: oklch(0.21 0.035 28);
-  --card-foreground: oklch(0.95 0.03 95);
-  --popover: oklch(0.21 0.035 28);
-  --popover-foreground: oklch(0.95 0.03 95);
-  --primary: oklch(0.62 0.2 28); /* Crimson, brightened for dark */
-  --primary-foreground: oklch(0.98 0.02 95);
-  --secondary: oklch(0.28 0.04 28);
-  --secondary-foreground: oklch(0.95 0.03 95);
-  --muted: oklch(0.28 0.04 28);
-  --muted-foreground: oklch(0.76 0.04 82);
-  --accent: oklch(0.62 0.2 28); /* Crimson, brightened for dark */
-  --accent-foreground: oklch(0.98 0.02 95);
+  /* Olympus Night — space #0D0906 / ember #FF6B35 / pale dust #EFE3D0 */
+  --background: oklch(0.144 0.01 63.4); /* Space #0D0906 */
+  --foreground: oklch(0.92 0.028 79.5); /* Pale dust #EFE3D0 */
+  --card: oklch(0.185 0.014 60);
+  --card-foreground: oklch(0.92 0.028 79.5);
+  --popover: oklch(0.185 0.014 60);
+  --popover-foreground: oklch(0.92 0.028 79.5);
+  --primary: oklch(0.705 0.193 39.2); /* Ember #FF6B35 */
+  --primary-foreground: oklch(0.15 0.015 55);
+  --secondary: oklch(0.24 0.02 55);
+  --secondary-foreground: oklch(0.92 0.028 79.5);
+  --muted: oklch(0.24 0.02 55);
+  --muted-foreground: oklch(0.72 0.035 70);
+  --accent: oklch(0.705 0.193 39.2); /* Ember #FF6B35 */
+  --accent-foreground: oklch(0.15 0.015 55);
   --destructive: oklch(0.62 0.22 25.723);
   --destructive-foreground: oklch(0.97 0 0);
   --success: oklch(0.7 0.15 155);
   --success-foreground: oklch(0.16 0.03 150);
-  --warning: oklch(0.8 0.15 70);
-  --warning-foreground: oklch(0.2 0.04 60);
+  --warning: oklch(0.75 0.15 55);
+  --warning-foreground: oklch(0.2 0.03 55);
   --info: oklch(0.68 0.12 240);
   --info-foreground: oklch(0.16 0.02 240);
-  --overlay: oklch(0.05 0.02 30 / 0.6);
-  --border: oklch(0.3 0.04 30);
-  --input: oklch(0.3 0.04 30);
-  --ring: oklch(0.62 0.2 28);
-  --chart-1: oklch(0.62 0.2 28);
-  --chart-2: oklch(0.72 0.15 32);
-  --chart-3: oklch(0.5 0.16 27);
-  --chart-4: oklch(0.82 0.08 82);
-  --chart-5: oklch(0.93 0.04 95);
-  --sidebar: oklch(0.19 0.03 28);
-  --sidebar-foreground: oklch(0.95 0.03 95);
-  --sidebar-primary: oklch(0.62 0.2 28);
-  --sidebar-primary-foreground: oklch(0.98 0.02 95);
-  --sidebar-accent: oklch(0.28 0.04 28);
-  --sidebar-accent-foreground: oklch(0.95 0.03 95);
-  --sidebar-border: oklch(0.3 0.04 30);
-  --sidebar-ring: oklch(0.62 0.2 28);
+  --overlay: oklch(0.06 0.005 60 / 0.65);
+  --border: oklch(0.27 0.02 58);
+  --input: oklch(0.27 0.02 58);
+  --ring: oklch(0.705 0.193 39.2);
+  --chart-1: oklch(0.705 0.193 39.2); /* Ember */
+  --chart-2: oklch(0.555 0.17 39.3); /* Rust */
+  --chart-3: oklch(0.8 0.1 55); /* Bright dust */
+  --chart-4: oklch(0.45 0.08 45); /* Dark oxide */
+  --chart-5: oklch(0.92 0.028 79.5); /* Pale dust */
+  --sidebar: oklch(0.165 0.012 60);
+  --sidebar-foreground: oklch(0.92 0.028 79.5);
+  --sidebar-primary: oklch(0.705 0.193 39.2);
+  --sidebar-primary-foreground: oklch(0.15 0.015 55);
+  --sidebar-accent: oklch(0.24 0.02 55);
+  --sidebar-accent-foreground: oklch(0.92 0.028 79.5);
+  --sidebar-border: oklch(0.27 0.02 58);
+  --sidebar-ring: oklch(0.705 0.193 39.2);
 }
 
 @theme inline {
