@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Search, Menu, ShoppingCart, User, X } from "lucide-react"
+import { Search, Menu, X } from "lucide-react"
 import { TopBar } from "@/components/top-bar"
 import { cn } from "@/lib/utils"
 
@@ -93,23 +93,6 @@ export default function Header() {
               />
             </div>
 
-            <button
-              type="button"
-              aria-label="Account"
-              className="relative hidden h-10 w-10 items-center justify-center text-foreground/70 transition-colors hover:text-primary sm:flex"
-            >
-              <User className="h-5 w-5" />
-            </button>
-
-            <button
-              type="button"
-              aria-label="Cart"
-              className="relative hidden h-10 w-10 items-center justify-center text-foreground/70 transition-colors hover:text-primary sm:flex"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute right-1.5 top-1.5 h-2 w-2 bg-primary"></span>
-            </button>
-
             <Link
               href="/contact"
               className="hidden items-center gap-2 bg-primary px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-foreground hover:text-background md:inline-flex"
@@ -194,13 +177,6 @@ export default function Header() {
                   className="inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                 >
                   Get Quote
-                </Link>
-                <Link
-                  href="/admin/login"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-foreground bg-transparent px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground hover:text-background"
-                >
-                  Login
                 </Link>
               </div>
             </div>
