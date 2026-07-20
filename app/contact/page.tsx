@@ -19,22 +19,16 @@ export const metadata = buildMetadata({
 
 const departments = [
   {
-    name: "Customer Support",
-    email: "sales@marstechnologyinc.com",
+    name: "Sales & International Business",
+    email: "gaurav@marstechnologyinc.com",
     description:
-      "Product information, technical support, and customer service inquiries",
+      "Wholesale pricing, bulk orders, global business development, and international trade partnerships",
   },
   {
-    name: "Partnership & Retailers",
-    email: "partners@marstechnologyinc.com",
+    name: "Support, Partnerships & Retailers",
+    email: "ayush@marstechnologyinc.com",
     description:
-      "Business partnerships, retail programs, and authorized dealer opportunities",
-  },
-  {
-    name: "International Business",
-    email: "international@marstechnologyinc.com",
-    description:
-      "Global business development and international trade partnerships",
+      "Product information, customer service, retail programs, and authorized dealer opportunities",
   },
 ];
 
@@ -81,7 +75,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:info@marstechnologyinc.com"
+                href="mailto:gaurav@marstechnologyinc.com"
                 className="group flex items-start justify-between gap-4 border-b border-foreground/15 py-5"
               >
                 <div className="flex flex-1 flex-col gap-1 sm:grid sm:grid-cols-[8.5rem_1fr] sm:gap-6">
@@ -90,7 +84,7 @@ export default function Contact() {
                   </span>
                   <span>
                     <span className="block break-all text-sm font-light text-foreground transition-colors group-hover:text-primary sm:text-base">
-                      info@marstechnologyinc.com
+                      gaurav@marstechnologyinc.com
                     </span>
                     <span className="mt-1 block font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                       Response within 24 hours
@@ -101,7 +95,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:support@marstechnologyinc.com"
+                href="mailto:ayush@marstechnologyinc.com"
                 className="group flex items-start justify-between gap-4 border-b border-foreground/15 py-5"
               >
                 <div className="flex flex-1 flex-col gap-1 sm:grid sm:grid-cols-[8.5rem_1fr] sm:gap-6">
@@ -109,7 +103,7 @@ export default function Contact() {
                     Support
                   </span>
                   <span className="block break-all text-sm font-light text-foreground transition-colors group-hover:text-primary sm:text-base">
-                    support@marstechnologyinc.com
+                    ayush@marstechnologyinc.com
                   </span>
                 </div>
                 <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />

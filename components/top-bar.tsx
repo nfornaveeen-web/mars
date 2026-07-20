@@ -15,11 +15,11 @@ export function TopBar() {
             +1 647 403 4735
           </Link>
           <Link
-            href="mailto:sales@marstechnologyinc.com"
+            href="mailto:gaurav@marstechnologyinc.com"
             className="flex items-center gap-2 whitespace-nowrap text-background/80 transition-colors hover:text-background"
           >
             <Mail className="h-3 w-3 shrink-0 text-background/50" aria-hidden="true" />
-            sales@marstechnologyinc.com
+            gaurav@marstechnologyinc.com
           </Link>
         </div>
         <div className="flex items-center gap-5 lg:gap-7">

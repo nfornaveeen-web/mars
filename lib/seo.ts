@@ -8,10 +8,10 @@ export const siteConfig = {
   phoneDisplay: "+1 647 403 4735",
   phoneHref: "+16474034735",
   emails: {
-    info: "info@marstechnologyinc.com",
-    sales: "sales@marstechnologyinc.com",
-    support: "support@marstechnologyinc.com",
-    partners: "partners@marstechnologyinc.com",
+    info: "gaurav@marstechnologyinc.com",
+    sales: "gaurav@marstechnologyinc.com",
+    support: "ayush@marstechnologyinc.com",
+    partners: "ayush@marstechnologyinc.com",
   },
   canadaOffice: {
     streetAddress: "250 Sunny Meadow Blvd, Unit 248",

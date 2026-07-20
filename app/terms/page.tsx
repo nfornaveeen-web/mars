@@ -140,7 +140,7 @@ export default function Terms() {
                   Mars Technology Inc
                 </p>
                 <div className="mt-3 space-y-1 font-mono text-xs text-muted-foreground">
-                  <p>Email: legal@marstechnologyinc.com</p>
+                  <p>Email: gaurav@marstechnologyinc.com</p>
                   <p>Phone: +1 647 403 4735</p>
                 </div>
               </div>

@@ -120,7 +120,7 @@ export default function AdminLoginForm({
               autoFocus
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="admin@marstechnologyinc.com"
+              placeholder="gaurav@marstechnologyinc.com"
               disabled={isSubmitting}
               className="h-11 border-border bg-card"
             />

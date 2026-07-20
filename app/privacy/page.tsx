@@ -125,7 +125,7 @@ export default function Privacy() {
                   Mars Technology Inc
                 </p>
                 <div className="mt-3 space-y-1 font-mono text-xs text-muted-foreground">
-                  <p>Email: privacy@marstechnologyinc.com</p>
+                  <p>Email: gaurav@marstechnologyinc.com</p>
                   <p>Phone: +1 647 403 4735</p>
                 </div>
               </div>
