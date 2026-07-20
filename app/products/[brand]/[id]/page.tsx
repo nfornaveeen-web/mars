@@ -319,7 +319,11 @@ export default async function ProductDetailPage({
 
           {/* About the brand — inverted editorial band */}
           <section className="border-t border-foreground/15 py-12 sm:py-16">
-            <div className="grid gap-8 bg-foreground p-6 text-background sm:p-10 lg:grid-cols-12 lg:gap-12">
+            <div className="relative isolate grid gap-8 overflow-hidden bg-foreground p-6 text-background sm:p-10 lg:grid-cols-12 lg:gap-12">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 bg-radial-[at_12%_0%] from-primary/20 via-transparent to-transparent"
+              />
               <div className="lg:col-span-7">
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-background/60">
                   About the brand

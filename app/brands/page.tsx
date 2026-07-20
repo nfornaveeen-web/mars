@@ -34,12 +34,19 @@ export default function BrandsPage() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Page header */}
-        <section className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-20">
+        <section className="relative mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-radial-[at_85%_0%] from-primary/6 via-transparent to-transparent"
+          />
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
             Portfolio
           </p>
           <h1 className="mt-4 max-w-4xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Brands we <span className="text-primary">distribute</span>
+            Brands we{" "}
+            <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
+              distribute
+            </span>
           </h1>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Wholesale access to flagship smartphones, audio, accessories, and
@@ -90,7 +97,7 @@ export default function BrandsPage() {
         </section>
 
         {/* CTA band */}
-        <section className="border-t-2 border-foreground bg-secondary">
+        <section className="border-t-2 border-foreground bg-linear-to-b from-secondary to-background">
           <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 sm:px-8 sm:py-20 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">

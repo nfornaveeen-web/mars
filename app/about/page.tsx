@@ -61,12 +61,19 @@ export default function About() {
       <Header />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Hero */}
-        <section className="py-12 sm:py-20">
+        <section className="relative py-12 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-radial-[at_85%_0%] from-primary/6 via-transparent to-transparent"
+          />
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
             About
           </p>
           <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Built for wholesale.
+            Built for{" "}
+            <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
+              wholesale.
+            </span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg font-light leading-snug text-foreground sm:text-2xl">
             Pioneering wholesale electronics distribution across North
