@@ -14,6 +14,7 @@ import LeadModal from "@/components/lead-modal";
 import { buildMetadata } from "@/lib/seo";
 import { productHref } from "@/lib/product-slugs";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 import {
   Carousel,
   CarouselContent,
@@ -119,6 +120,7 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="border-t-2 border-foreground pt-8 sm:pt-10">
+            <Reveal>
             <div className="mb-10 grid grid-cols-1 items-end gap-6 sm:mb-12 lg:grid-cols-12 lg:gap-x-6 lg:pr-28">
               <div className="lg:col-span-8">
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
@@ -143,17 +145,19 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+            </Reveal>
 
             <Carousel
               opts={{ align: "start", loop: true }}
               className="relative"
             >
               <CarouselContent>
-                {FEATURED_PRODUCTS.map((product) => (
+                {FEATURED_PRODUCTS.map((product, index) => (
                   <CarouselItem
                     key={product.name}
                     className="basis-4/5 sm:basis-1/2 lg:basis-1/3"
                   >
+                    <Reveal delay={index * 90} className="h-full">
                     <Link href={product.href} className="group block h-full">
                       <article className="flex h-full flex-col border-2 border-foreground/15 bg-card transition-colors duration-300 group-hover:border-foreground">
                         {/* Image plate */}
@@ -191,6 +195,7 @@ export default function Home() {
                         </div>
                       </article>
                     </Link>
+                    </Reveal>
                   </CarouselItem>
                 ))}
               </CarouselContent>

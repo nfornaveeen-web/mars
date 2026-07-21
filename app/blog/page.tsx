@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { blogPosts } from "@/lib/blog";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 export const metadata = buildMetadata({
   title: "Wholesale Electronics Blog",
@@ -42,8 +43,8 @@ export default function Blog() {
 
         <div>
           {blogPosts.map((post, index) => (
+            <Reveal key={post.slug} delay={(index % 6) * 60}>
             <Link
-              key={post.slug}
               href={`/blog/${post.slug}`}
               className="group -mx-4 block border-t-2 border-foreground px-4 py-8 transition-colors hover:bg-primary sm:-mx-6 sm:px-6 sm:py-10"
             >
@@ -72,6 +73,7 @@ export default function Blog() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
           <div className="-mx-4 border-t-2 border-foreground sm:-mx-6" />
         </div>

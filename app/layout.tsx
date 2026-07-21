@@ -187,6 +187,9 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessJsonLd),
           }}
         />
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider

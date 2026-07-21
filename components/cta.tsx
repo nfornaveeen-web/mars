@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Clock3, Mail, PhoneCall } from "lucide-react";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 import { siteConfig } from "@/lib/seo";
 
 const sourcingSignals = [
@@ -79,6 +80,7 @@ export default function CTA() {
               </p>
 
               {/* Sourcing signal cells */}
+              <Reveal delay={100}>
               <div className="mt-8 grid border-t border-l border-primary-foreground/25 sm:grid-cols-3">
                 {sourcingSignals.map((signal) => (
                   <div
@@ -94,6 +96,7 @@ export default function CTA() {
                   </div>
                 ))}
               </div>
+              </Reveal>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -122,6 +125,7 @@ export default function CTA() {
                 Direct lines
               </p>
 
+              <Reveal delay={150}>
               <div className="mt-5 space-y-4">
                 {contactCards.map((card) => {
                   const Icon = card.icon;
@@ -172,6 +176,7 @@ export default function CTA() {
                   );
                 })}
               </div>
+              </Reveal>
 
               <div className="mt-4 border border-primary-foreground/25 p-5">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary-foreground/60">

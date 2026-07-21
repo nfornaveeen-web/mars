@@ -6,6 +6,7 @@ import { Search } from "lucide-react"
 import { getAllCategories, getProductsByCategory } from "@/lib/brands"
 import ProductCard from "@/components/product-card"
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 export default function ProductsContent() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -133,8 +134,14 @@ export default function ProductsContent() {
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 xl:grid-cols-4">
-            {filteredProducts.map((product) => (
-              <ProductCard key={`${product.brand}-${product.id}`} product={product} />
+            {filteredProducts.map((product, index) => (
+              <Reveal
+                key={`${product.brand}-${product.id}`}
+                delay={(index % 4) * 70}
+                className="h-full"
+              >
+                <ProductCard product={product} />
+              </Reveal>
             ))}
           </div>
         )}

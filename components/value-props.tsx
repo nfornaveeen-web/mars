@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 const pillars = [
   {
@@ -224,6 +225,7 @@ export default function ValueProps() {
           {/* Pillar rows */}
           <div className="mt-12 sm:mt-16">
             {pillars.map((pillar, index) => (
+              <Reveal key={pillar.number}>
               <article
                 key={pillar.number}
                 className="grid grid-cols-1 gap-6 border-t-2 border-foreground py-8 sm:grid-cols-12 sm:gap-x-6 sm:py-10"
@@ -263,6 +265,7 @@ export default function ValueProps() {
                   ))}
                 </ul>
               </article>
+              </Reveal>
             ))}
           </div>
 
@@ -329,9 +332,9 @@ export default function ValueProps() {
               </p>
 
               <div className="mt-5">
-                {proofStats.map((item) => (
+                {proofStats.map((item, statIndex) => (
+                  <Reveal key={item.label} delay={statIndex * 70}>
                   <div
-                    key={item.label}
                     className="grid grid-cols-1 items-center gap-2 border-t-2 border-foreground py-5 first:border-t-0 first:pt-0 sm:grid-cols-12 sm:gap-x-6 sm:py-6"
                   >
                     <p className="font-display text-4xl uppercase leading-none tracking-tight text-foreground sm:col-span-5 sm:text-5xl lg:text-6xl">
@@ -346,6 +349,7 @@ export default function ValueProps() {
                       </p>
                     </div>
                   </div>
+                  </Reveal>
                 ))}
               </div>
             </div>

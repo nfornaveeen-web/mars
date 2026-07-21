@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 export default function Hero() {
   return (
@@ -26,20 +27,25 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Mono eyebrow badge */}
+        <Reveal>
         <p className="inline-flex max-w-full items-center gap-2.5 border border-foreground/20 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
           <span className="h-1.5 w-1.5 shrink-0 bg-success" />
           B2B Wholesale Distribution — CA &amp; US
         </p>
+        </Reveal>
 
         {/* Poster headline */}
+        <Reveal delay={90}>
         <h1 className="mt-6 max-w-6xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:mt-8 sm:text-6xl lg:text-8xl">
           Big brands.{" "}
           <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
             Bigger margins.
           </span>
         </h1>
+        </Reveal>
 
         {/* Standfirst + CTAs */}
+        <Reveal delay={180}>
         <div className="mt-8 grid grid-cols-1 items-end gap-6 sm:mt-10 md:grid-cols-12 md:gap-x-6">
           <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base md:col-span-7">
             Stock the shelves that sell: iPhone to Pixel, Galaxy to JBL —
@@ -63,6 +69,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+        </Reveal>
 
         {/* Video card — drifts slower than the scroll for depth */}
         <Parallax speed={55} className="mt-10 sm:mt-12" innerClassName="relative">

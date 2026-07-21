@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 type VideoProductBannerProps = {
   badge?: string;
@@ -60,7 +61,8 @@ export default function VideoProductBanner({
             </div>
 
             {/* Readability panel */}
-            <div className="w-full max-w-sm space-y-4 sm:max-w-2xl md:mt-auto md:border md:border-background/15 md:bg-foreground/35 md:p-6 md:backdrop-blur-sm">
+            <Reveal delay={120} className="w-full max-w-sm sm:max-w-2xl md:mt-auto">
+            <div className="w-full space-y-4 md:border md:border-background/15 md:bg-foreground/35 md:p-6 md:backdrop-blur-sm">
               <h2 className="font-display text-3xl uppercase leading-[0.95] tracking-tight text-background sm:text-5xl lg:text-6xl">
                 {title} <span className="text-primary">{highlight}</span>
               </h2>
@@ -83,6 +85,7 @@ export default function VideoProductBanner({
                 </Link>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 import { getAllCategories, getProductsByCategory } from "@/lib/brands";
 import {
   Carousel,
@@ -27,6 +28,7 @@ export default function ProductCategories() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="border-t-2 border-foreground pt-8 sm:pt-10">
           {/* Header */}
+          <Reveal>
           <div className="mb-8 flex flex-wrap items-end justify-between gap-6 sm:mb-10">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
@@ -49,6 +51,7 @@ export default function ProductCategories() {
               View All <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
+          </Reveal>
 
           {/* Numbered editorial tiles */}
           <Carousel opts={{ align: "start", loop: true }} className="relative">
@@ -65,6 +68,7 @@ export default function ProductCategories() {
                     key={category}
                     className="basis-4/5 sm:basis-1/2 xl:basis-1/3"
                   >
+                    <Reveal delay={index * 80} className="h-full">
                     <Link
                       href={`/categories/${slug}`}
                       className="group relative flex aspect-4/3 flex-col overflow-hidden border-2 border-foreground/15 bg-card transition-colors duration-300 hover:border-primary hover:bg-primary"
@@ -107,6 +111,7 @@ export default function ProductCategories() {
                         </p>
                       </div>
                     </Link>
+                    </Reveal>
                   </CarouselItem>
                 );
               })}

@@ -6,6 +6,7 @@ import BrandCard from "@/components/brand-card";
 import { brands } from "@/lib/brands";
 import { buildMetadata } from "@/lib/seo";
 import Parallax from "@/components/parallax";
+import Reveal from "@/components/reveal";
 
 export const metadata = buildMetadata({
   title: "Apple, Samsung & Google Wholesale Distributor — Brands",
@@ -94,7 +95,9 @@ export default function BrandsPage() {
           </div>
           <div className="border-b-2 border-foreground">
             {indexedBrands.map((brand, index) => (
-              <BrandCard key={brand.id} brand={brand} index={index} />
+              <Reveal key={brand.id} delay={(index % 9) * 50}>
+                <BrandCard brand={brand} index={index} />
+              </Reveal>
             ))}
           </div>
         </section>
