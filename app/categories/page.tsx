@@ -86,7 +86,7 @@ export default function CategoriesPage() {
                     {imageSrc ? (
                       <Image
                         src={imageSrc}
-                        alt={category}
+                        alt={`Wholesale ${category.toLowerCase()} category`}
                         width={220}
                         height={220}
                         className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"

@@ -30,7 +30,7 @@ export default function ProductGallery({
         <div className="aspect-square">
           <Image
             src={selectedImage}
-            alt={productName}
+            alt={`${productName} — factory-sealed wholesale unit`}
             width={1000}
             height={1000}
             priority

@@ -83,7 +83,7 @@ export default function ProductCategories() {
                           <Parallax speed={-28}>
                             <Image
                               src={imageSrc}
-                              alt={category}
+                              alt={`Wholesale ${category.toLowerCase()} — product category`}
                               width={220}
                               height={220}
                               className="max-h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-105"

@@ -55,7 +55,7 @@ export function buildMetadata({
   noIndex = false,
 }: BuildMetadataOptions): Metadata {
   const canonical = absoluteUrl(path);
-  const images = image ? [absoluteUrl(image)] : undefined;
+  const images = [absoluteUrl(image ?? "/og-default.png")];
 
   return {
     title,

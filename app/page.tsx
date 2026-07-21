@@ -157,7 +157,7 @@ export default function Home() {
                         <div className="relative flex aspect-square items-center justify-center overflow-hidden border-b-2 border-foreground/15 bg-secondary p-6 transition-colors duration-300 group-hover:border-foreground sm:p-8">
                           <Image
                             src={product.image}
-                            alt={product.name}
+                            alt={`${product.name} — wholesale flagship inventory`}
                             width={420}
                             height={420}
                             className="max-h-[72%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"

@@ -20,7 +20,7 @@ export default function ProductCard({ product }: { product: Product & { brand: s
         {!imageError ? (
           <Image
             src={product.image || `/placeholder.svg?height=300&width=300&query=${encodeURIComponent(product.name)}`}
-            alt={product.name}
+            alt={`${product.name} — wholesale ${product.category.toLowerCase()}, factory-sealed`}
             fill
             className="object-contain p-6 transition-transform duration-300 group-hover:scale-[1.02]"
             onError={() => setImageError(true)}
