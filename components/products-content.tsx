@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Search } from "lucide-react"
 import { getAllCategories, getProductsByCategory } from "@/lib/brands"
 import ProductCard from "@/components/product-card"
+import Parallax from "@/components/parallax";
 
 export default function ProductsContent() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -56,9 +57,11 @@ export default function ProductsContent() {
           Catalog
         </p>
         <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <Parallax speed={18}>
           <h1 className="font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             All Products
           </h1>
+          </Parallax>
           <p className="pb-1 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {filteredProducts.length} / {allProducts.length} SKUs
           </p>

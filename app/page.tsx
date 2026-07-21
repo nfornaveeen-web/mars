@@ -13,6 +13,7 @@ import Footer from "@/components/footer";
 import LeadModal from "@/components/lead-modal";
 import { buildMetadata } from "@/lib/seo";
 import { productHref } from "@/lib/product-slugs";
+import Parallax from "@/components/parallax";
 import {
   Carousel,
   CarouselContent,
@@ -123,9 +124,11 @@ export default function Home() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
                   02 / The Latest
                 </p>
-                <h2 className="mt-4 font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                  Moving now.
-                </h2>
+                <Parallax speed={18}>
+                  <h2 className="mt-4 font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                    Moving now.
+                  </h2>
+                </Parallax>
               </div>
               <div className="lg:col-span-4">
                 <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base">

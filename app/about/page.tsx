@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import Parallax from "@/components/parallax";
 
 export const metadata = buildMetadata({
   title: "About Our Wholesale Electronics Distribution — Canada & USA",
@@ -69,12 +70,14 @@ export default function About() {
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
             About
           </p>
-          <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Built for{" "}
-            <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
-              wholesale.
-            </span>
-          </h1>
+          <Parallax speed={22}>
+            <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              Built for{" "}
+              <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
+                wholesale.
+              </span>
+            </h1>
+          </Parallax>
           <p className="mt-8 max-w-3xl text-lg font-light leading-snug text-foreground sm:text-2xl">
             Pioneering wholesale electronics distribution across North
             America.

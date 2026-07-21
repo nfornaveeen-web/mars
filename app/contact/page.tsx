@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import ContactForm from "@/components/contact-form";
 import { ArrowUpRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import Parallax from "@/components/parallax";
 
 export const metadata = buildMetadata({
   title: "Contact Wholesale Electronics Distributor in Canada",
@@ -43,9 +44,11 @@ export default function Contact() {
             <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
               Contact
             </p>
-            <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              Talk to us.
-            </h1>
+            <Parallax speed={20}>
+              <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+                Talk to us.
+              </h1>
+            </Parallax>
             <p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
               Ready to partner with a trusted global technology distributor?
               Contact our team for partnership opportunities, support, and

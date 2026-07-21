@@ -32,9 +32,11 @@ export default function ProductCategories() {
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
                 01 / Collections
               </p>
-              <h2 className="mt-4 font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                What we stock.
-              </h2>
+              <Parallax speed={18}>
+                <h2 className="mt-4 font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                  What we stock.
+                </h2>
+              </Parallax>
               <p className="mt-4 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
                 Seven categories, stocked deep and priced for resale — from
                 flagship handsets to the accessories that pad every basket.

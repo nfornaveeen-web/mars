@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import { ArrowUpRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { blogPosts } from "@/lib/blog";
+import Parallax from "@/components/parallax";
 
 export const metadata = buildMetadata({
   title: "Wholesale Electronics Blog",
@@ -28,9 +29,11 @@ export default function Blog() {
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
             Blog
           </p>
-          <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            The Wholesale Brief
-          </h1>
+          <Parallax speed={20}>
+            <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              The Wholesale Brief
+            </h1>
+          </Parallax>
           <p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
             Field notes on pricing, supply, and what&apos;s actually selling —
             written for buyers, not browsers.

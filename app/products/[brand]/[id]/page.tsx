@@ -10,6 +10,7 @@ import ProductActions from "@/components/product-actions";
 import { permanentRedirect } from "next/navigation";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
 import { brands, getBrandProducts } from "@/lib/brands";
+import Parallax from "@/components/parallax";
 import {
   getAllProductParams,
   productHref,
@@ -247,10 +248,12 @@ export default async function ProductDetailPage({
           <section className="py-12 sm:py-16">
             <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-7">
+                <Parallax speed={26}>
                 <ProductGallery
                   images={galleryImages}
                   productName={product.name}
                 />
+                </Parallax>
               </div>
 
               <aside className="lg:col-span-5">

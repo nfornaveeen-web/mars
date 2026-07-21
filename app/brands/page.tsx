@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import BrandCard from "@/components/brand-card";
 import { brands } from "@/lib/brands";
 import { buildMetadata } from "@/lib/seo";
+import Parallax from "@/components/parallax";
 
 export const metadata = buildMetadata({
   title: "Apple, Samsung & Google Wholesale Distributor — Brands",
@@ -42,12 +43,14 @@ export default function BrandsPage() {
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
             Portfolio
           </p>
-          <h1 className="mt-4 max-w-4xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Brands we{" "}
-            <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
-              distribute
-            </span>
-          </h1>
+          <Parallax speed={22}>
+            <h1 className="mt-4 max-w-4xl font-display text-4xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              Brands we{" "}
+              <span className="bg-linear-to-r from-primary to-warning bg-clip-text text-transparent">
+                distribute
+              </span>
+            </h1>
+          </Parallax>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             Wholesale access to flagship smartphones, audio, accessories, and
             consumer electronics — brands retailers, resellers, and

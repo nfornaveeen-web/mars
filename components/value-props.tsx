@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Parallax from "@/components/parallax";
 
 const pillars = [
   {
@@ -206,10 +207,12 @@ export default function ValueProps() {
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
                 04 / What we do
               </p>
-              <h2 className="mt-4 max-w-4xl font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Source it. Verify it. Move it.{" "}
-                <span className="text-primary">In bulk.</span>
-              </h2>
+              <Parallax speed={18}>
+                <h2 className="mt-4 max-w-4xl font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                  Source it. Verify it. Move it.{" "}
+                  <span className="text-primary">In bulk.</span>
+                </h2>
+              </Parallax>
             </div>
             <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base lg:col-span-5">
               Premium devices, verified stock, and dependable wholesale
