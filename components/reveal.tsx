@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import type React from "react";
 
 type RevealProps = {
@@ -13,11 +13,14 @@ type RevealProps = {
 };
 
 /**
- * Framer-style appear-on-scroll: children start faded + shifted down and
- * spring into place when entering the viewport. Fires once per element.
- * Respects prefers-reduced-motion (renders instantly). A <noscript> rule in
- * the root layout unhides everything when JavaScript is unavailable.
+ * Spring physics for the entrance: F = -k·x − c·v, integrated per frame
+ * (semi-implicit Euler). No fixed duration — the element has mass, the
+ * spring pulls it home, damping settles it with a slight organic overshoot.
  */
+const STIFFNESS = 170; // k — pull strength
+const DAMPING = 20; // c — friction; below critical => subtle bounce
+const MASS = 1; // m
+
 export default function Reveal({
   delay = 0,
   distance = 28,
@@ -25,43 +28,81 @@ export default function Reveal({
   children,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const settle = () => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    };
+
     if (
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !("IntersectionObserver" in window)
     ) {
-      setShown(true);
+      settle();
       return;
     }
+
+    let raf = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+
+    const spring = () => {
+      let x = distance; // displacement from rest
+      let v = 0; // velocity
+      let last = performance.now();
+
+      const step = (now: number) => {
+        // clamp dt so background tabs / long frames can't explode the sim
+        const dt = Math.min((now - last) / 1000, 1 / 30);
+        last = now;
+
+        const force = -STIFFNESS * x - DAMPING * v;
+        v += (force / MASS) * dt;
+        x += v * dt;
+
+        // opacity tracks progress toward rest, clamped
+        const progress = Math.min(1, Math.max(0, 1 - x / distance));
+        el.style.opacity = progress.toFixed(3);
+        el.style.transform = `translate3d(0, ${x.toFixed(2)}px, 0)`;
+
+        if (Math.abs(x) < 0.05 && Math.abs(v) < 0.05) {
+          settle();
+          return;
+        }
+        raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    };
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setShown(true);
             io.disconnect();
+            timer = setTimeout(spring, delay);
           }
         }
       },
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
-  }, []);
+
+    return () => {
+      io.disconnect();
+      if (timer) clearTimeout(timer);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [delay, distance]);
 
   return (
     <div
       ref={ref}
       data-reveal=""
       className={className}
-      style={{
-        opacity: shown ? 1 : 0,
-        transform: shown ? "none" : `translateY(${distance}px)`,
-        transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
-      }}
+      style={{ opacity: 0, transform: `translateY(${distance}px)` }}
     >
       {children}
     </div>

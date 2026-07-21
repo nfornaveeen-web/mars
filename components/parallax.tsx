@@ -15,10 +15,15 @@ type ParallaxProps = {
   children: React.ReactNode;
 };
 
+/** Interpolation factor per frame — lower = floatier glide. */
+const LERP = 0.12;
+
 /**
- * Scroll parallax: the outer div is measured, the inner div is transformed,
- * so the effect never feeds back into its own measurements. Transform-only
- * (no layout), rAF-throttled, and disabled for prefers-reduced-motion.
+ * Lerp-smoothed scroll parallax: the outer div is measured, the inner div is
+ * transformed. Rather than mapping scroll position directly, the transform
+ * glides toward its target each frame (current += (target - current) * ease),
+ * converting discrete wheel steps into fluid motion. Transform-only,
+ * rAF-driven with an idle cutoff, disabled for prefers-reduced-motion.
  */
 export default function Parallax({
   speed = 24,
@@ -35,26 +40,48 @@ export default function Parallax({
     if (!outer || !inner) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    let target = 0;
+    let current = 0;
     let raf = 0;
-    const update = () => {
-      raf = 0;
+    let running = false;
+
+    const measure = () => {
       const rect = outer.getBoundingClientRect();
       const vh = window.innerHeight || 1;
       const center = rect.top + rect.height / 2;
       const progress = (center - vh / 2) / (vh / 2 + rect.height / 2);
-      const clamped = Math.max(-1, Math.min(1, progress));
-      inner.style.transform = `translate3d(0, ${(clamped * speed).toFixed(2)}px, 0)`;
-    };
-    const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(update);
+      target = Math.max(-1, Math.min(1, progress)) * speed;
     };
 
-    update();
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
+    const tick = () => {
+      current += (target - current) * LERP;
+      if (Math.abs(target - current) < 0.05) {
+        current = target;
+        running = false;
+      }
+      inner.style.transform = `translate3d(0, ${current.toFixed(2)}px, 0)`;
+      if (running) raf = requestAnimationFrame(tick);
+    };
+
+    const wake = () => {
+      measure();
+      if (!running) {
+        running = true;
+        raf = requestAnimationFrame(tick);
+      }
+    };
+
+    // settle to the correct position immediately on mount (no glide-in jump)
+    measure();
+    current = target;
+    inner.style.transform = `translate3d(0, ${current.toFixed(2)}px, 0)`;
+
+    window.addEventListener("scroll", wake, { passive: true });
+    window.addEventListener("resize", wake);
     return () => {
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
+      running = false;
+      window.removeEventListener("scroll", wake);
+      window.removeEventListener("resize", wake);
       if (raf) cancelAnimationFrame(raf);
     };
   }, [speed]);
