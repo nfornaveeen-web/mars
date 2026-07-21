@@ -60,8 +60,8 @@ export default function CTA() {
             05 / Ready to source?
           </p>
 
-          <div className="mt-6 grid grid-cols-12 gap-x-10 gap-y-12 sm:mt-8">
-            <article className="col-span-12 lg:col-span-7">
+          <div className="mt-6 grid grid-cols-1 gap-y-12 sm:mt-8 lg:grid-cols-12 lg:gap-x-10">
+            <article className="lg:col-span-7">
               <Parallax speed={30}>
                 <h2 className="max-w-3xl font-display text-3xl uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
                   Your shelves are waiting. So is our warehouse.
@@ -117,7 +117,7 @@ export default function CTA() {
               </p>
             </article>
 
-            <aside className="col-span-12 lg:col-span-5">
+            <aside className="lg:col-span-5">
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary-foreground/70 sm:text-xs">
                 Direct lines
               </p>

@@ -201,8 +201,8 @@ export default function ValueProps() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="border-t-2 border-foreground pt-8 sm:pt-10">
           {/* Header */}
-          <div className="grid grid-cols-12 items-end gap-x-6 gap-y-6">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-x-6">
+            <div className="lg:col-span-7">
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
                 04 / What we do
               </p>
@@ -211,7 +211,7 @@ export default function ValueProps() {
                 <span className="text-primary">In bulk.</span>
               </h2>
             </div>
-            <p className="col-span-12 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base lg:col-span-5">
+            <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base lg:col-span-5">
               Premium devices, verified stock, and dependable wholesale
               fulfillment for retailers, resellers, distributors, and
               liquidation buyers across North America.
@@ -223,9 +223,9 @@ export default function ValueProps() {
             {pillars.map((pillar, index) => (
               <article
                 key={pillar.number}
-                className="grid grid-cols-12 gap-x-6 gap-y-6 border-t-2 border-foreground py-8 sm:py-10"
+                className="grid grid-cols-1 gap-6 border-t-2 border-foreground py-8 sm:grid-cols-12 sm:gap-x-6 sm:py-10"
               >
-                <div className="col-span-12 sm:col-span-2">
+                <div className="sm:col-span-2">
                   <span
                     ref={(element) => {
                       numberRefs.current[index] = element;
@@ -236,7 +236,7 @@ export default function ValueProps() {
                   </span>
                 </div>
 
-                <div className="col-span-12 sm:col-span-10 lg:col-span-4">
+                <div className="sm:col-span-10 lg:col-span-4">
                   <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
                     {pillar.label}
                   </p>
@@ -248,7 +248,7 @@ export default function ValueProps() {
                   </p>
                 </div>
 
-                <ul className="col-span-12 self-center lg:col-span-6 lg:border-l lg:border-foreground/15 lg:pl-8">
+                <ul className="self-center sm:col-span-12 lg:col-span-6 lg:border-l lg:border-foreground/15 lg:pl-8">
                   {pillar.items.map((item) => (
                     <li
                       key={item}
@@ -329,12 +329,12 @@ export default function ValueProps() {
                 {proofStats.map((item) => (
                   <div
                     key={item.label}
-                    className="grid grid-cols-12 items-center gap-x-6 gap-y-2 border-t-2 border-foreground py-5 first:border-t-0 first:pt-0 sm:py-6"
+                    className="grid grid-cols-1 items-center gap-2 border-t-2 border-foreground py-5 first:border-t-0 first:pt-0 sm:grid-cols-12 sm:gap-x-6 sm:py-6"
                   >
-                    <p className="col-span-12 font-display text-4xl uppercase leading-none tracking-tight text-foreground sm:col-span-5 sm:text-5xl lg:text-6xl">
+                    <p className="font-display text-4xl uppercase leading-none tracking-tight text-foreground sm:col-span-5 sm:text-5xl lg:text-6xl">
                       {item.value}
                     </p>
-                    <div className="col-span-12 sm:col-span-7">
+                    <div className="sm:col-span-7">
                       <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">
                         {item.label}
                       </p>

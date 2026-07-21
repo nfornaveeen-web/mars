@@ -118,8 +118,8 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="border-t-2 border-foreground pt-8 sm:pt-10">
-            <div className="mb-10 grid grid-cols-12 items-end gap-x-6 gap-y-6 sm:mb-12 sm:pr-28">
-              <div className="col-span-12 lg:col-span-8">
+            <div className="mb-10 grid grid-cols-1 items-end gap-6 sm:mb-12 lg:grid-cols-12 lg:gap-x-6 lg:pr-28">
+              <div className="lg:col-span-8">
                 <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary sm:text-xs">
                   02 / The Latest
                 </p>
@@ -127,7 +127,7 @@ export default function Home() {
                   Moving now.
                 </h2>
               </div>
-              <div className="col-span-12 lg:col-span-4">
+              <div className="lg:col-span-4">
                 <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
                   This week&apos;s fastest-turning SKUs — flagship hardware
                   with proven sell-through and margin still on the table.

@@ -40,14 +40,14 @@ export default function Hero() {
         </h1>
 
         {/* Standfirst + CTAs */}
-        <div className="mt-8 grid grid-cols-12 items-end gap-x-6 gap-y-6 sm:mt-10">
-          <p className="col-span-12 max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base md:col-span-7">
+        <div className="mt-8 grid grid-cols-1 items-end gap-6 sm:mt-10 md:grid-cols-12 md:gap-x-6">
+          <p className="max-w-prose font-sans text-sm font-light leading-relaxed text-muted-foreground sm:text-base md:col-span-7">
             Stock the shelves that sell: iPhone to Pixel, Galaxy to JBL —
             verified, factory-sealed inventory for retailers, resellers, and
             distributors across North America, with same-day processing on every
             bulk order.
           </p>
-          <div className="col-span-12 flex flex-col gap-3 sm:flex-row sm:items-center md:col-span-5 md:justify-end">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center md:col-span-5 md:justify-end">
             <Link
               href="/products"
               className="inline-flex w-fit items-center gap-2 bg-primary px-6 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
