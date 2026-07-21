@@ -32,16 +32,16 @@ const sitemapLinks = {
 
 const featuredPosts = [
   {
-    label: "Price Like a Distributor, Not a Spreadsheet",
-    href: "/blog/wholesale-pricing-strategy",
+    label: "Buying iPhones Wholesale in Canada: A Dealer's Guide",
+    href: "/blog/wholesale-iphone-distributor-canada",
   },
   {
-    label: "Liquidation Without the Fire Sale",
-    href: "/blog/asset-liquidation-guide",
+    label: "The H2 2026 Flagship Calendar for Retailers",
+    href: "/blog/flagship-launch-calendar-2026",
   },
   {
-    label: "Never Explain an Empty Shelf Again",
-    href: "/blog/supply-chain-resilience",
+    label: "How to Buy Phones in Bulk in Canada",
+    href: "/blog/buy-phones-in-bulk-canada",
   },
 ];
 

@@ -4,6 +4,23 @@ import { absoluteUrl } from "@/lib/seo";
 import { productHref } from "@/lib/product-slugs";
 
 const blogSlugs = [
+  "galaxy-z-fold-8-flip-8-retailers",
+  "pixel-11-preview-retailers",
+  "iphone-18-rumors-retailers",
+  "galaxy-s26-ultra-mid-year",
+  "flagship-launch-calendar-2026",
+  "wholesale-iphone-distributor-canada",
+  "buy-phones-in-bulk-canada",
+  "wholesale-samsung-distributor-canada",
+  "cell-phone-wholesale-supplier-gta",
+  "electronics-liquidation-ontario",
+  "how-to-open-phone-store-canada",
+  "wholesale-tablets-canada",
+  "wholesale-audio-airpods-jbl",
+  "mixed-pallet-electronics-wholesale",
+  "cross-border-electronics-canada-usa",
+  "factory-sealed-vs-open-box-vs-refurbished",
+  "wholesale-google-pixel-canada",
   "wholesale-pricing-strategy",
   "asset-liquidation-guide",
   "supply-chain-resilience",
