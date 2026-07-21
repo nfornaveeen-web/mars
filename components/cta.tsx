@@ -57,7 +57,7 @@ export default function CTA() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="border-t-2 border-primary-foreground pt-8 sm:pt-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary-foreground/70 sm:text-xs">
-            06 / Ready to source?
+            05 / Ready to source?
           </p>
 
           <div className="mt-6 grid grid-cols-12 gap-x-10 gap-y-12 sm:mt-8">

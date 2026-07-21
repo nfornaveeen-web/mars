@@ -7,7 +7,6 @@ import Hero from "@/components/hero";
 import Services from "@/components/services";
 import ProductCategories from "@/components/product-categories";
 import VideoProductBanner from "@/components/video-product-banner";
-import VideoSection from "@/components/video-section";
 import ValueProps from "@/components/value-props";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
@@ -218,9 +217,6 @@ export default function Home() {
 
       {/* 04 / Why Mars */}
       <ValueProps />
-
-      {/* 05 / Exhibitions */}
-      <VideoSection />
 
       <Ticker />
 
