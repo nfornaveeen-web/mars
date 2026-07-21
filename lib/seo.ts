@@ -8,8 +8,8 @@ export const siteConfig = {
   phoneDisplay: "+1 647 403 4735",
   phoneHref: "+16474034735",
   emails: {
-    info: "gaurav@marstechnologyinc.com",
-    sales: "gaurav@marstechnologyinc.com",
+    info: "sales@marstechnologyinc.com",
+    sales: "sales@marstechnologyinc.com",
     support: "ayush@marstechnologyinc.com",
     partners: "ayush@marstechnologyinc.com",
   },

@@ -52,11 +52,11 @@ export default function Footer() {
           </div>
 
           <a
-            href="mailto:gaurav@marstechnologyinc.com"
+            href="mailto:sales@marstechnologyinc.com"
             className="inline-flex items-center gap-3 self-start border-2 border-background/25 px-4 py-3.5 font-mono text-[10px] uppercase tracking-widest text-background transition-colors hover:border-background hover:bg-background hover:text-foreground sm:px-5 sm:text-xs"
           >
             <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
-            gaurav@marstechnologyinc.com
+            sales@marstechnologyinc.com
           </a>
         </div>
       </div>

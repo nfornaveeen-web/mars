@@ -75,7 +75,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:gaurav@marstechnologyinc.com"
+                href="mailto:sales@marstechnologyinc.com"
                 className="group flex items-start justify-between gap-4 border-b border-foreground/15 py-5"
               >
                 <div className="flex flex-1 flex-col gap-1 sm:grid sm:grid-cols-[8.5rem_1fr] sm:gap-6">
@@ -84,7 +84,7 @@ export default function Contact() {
                   </span>
                   <span>
                     <span className="block break-all text-sm font-light text-foreground transition-colors group-hover:text-primary sm:text-base">
-                      gaurav@marstechnologyinc.com
+                      sales@marstechnologyinc.com
                     </span>
                     <span className="mt-1 block font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                       Response within 24 hours

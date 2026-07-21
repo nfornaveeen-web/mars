@@ -188,11 +188,11 @@ export default function LeadModal() {
                         +1 (647) 403-4735
                       </a>
                       <a
-                        href="mailto:gaurav@marstechnologyinc.com"
+                        href="mailto:sales@marstechnologyinc.com"
                         className="group flex items-center gap-3 border-t border-foreground/15 py-3 text-sm font-light text-foreground transition-colors hover:text-primary"
                       >
                         <Mail className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
-                        gaurav@marstechnologyinc.com
+                        sales@marstechnologyinc.com
                       </a>
                       <div className="flex items-start gap-3 border-t border-foreground/15 py-3 text-sm font-light text-foreground">
                         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
