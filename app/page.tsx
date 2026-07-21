@@ -15,6 +15,7 @@ import { buildMetadata } from "@/lib/seo";
 import { productHref } from "@/lib/product-slugs";
 import Parallax from "@/components/parallax";
 import Reveal from "@/components/reveal";
+import StickyCover from "@/components/sticky-cover";
 import {
   Carousel,
   CarouselContent,
@@ -206,25 +207,25 @@ export default function Home() {
         </div>
       </section>
 
-      <VideoProductBanner
-        badge="Google Pixel Focus"
-        title="Put the Pixel"
-        highlight="front and center."
-        description="Google's lineup is pulling customers into stores. Stock the range before your competitors restock theirs."
-        videoSrc="/products/Meet_the_New_Pixel_Lineup_Engineered_by_Google_For_All_You_Do_720P.mp4"
-        primaryHref="/brands/google"
-        primaryLabel="Explore Google"
-        secondaryHref="/contact"
-        secondaryLabel="Request Quote"
-      />
+      {/* Pixel banner pins while 03 / Brands covers it */}
+      <StickyCover cover={<Services />}>
+        <VideoProductBanner
+          badge="Google Pixel Focus"
+          title="Put the Pixel"
+          highlight="front and center."
+          description="Google's lineup is pulling customers into stores. Stock the range before your competitors restock theirs."
+          videoSrc="/products/Meet_the_New_Pixel_Lineup_Engineered_by_Google_For_All_You_Do_720P.mp4"
+          primaryHref="/brands/google"
+          primaryLabel="Explore Google"
+          secondaryHref="/contact"
+          secondaryLabel="Request Quote"
+        />
+      </StickyCover>
 
-      {/* 03 / Brands */}
-      <Services />
-
-      <VideoProductBanner />
-
-      {/* 04 / Why Mars */}
-      <ValueProps />
+      {/* Samsung banner pins while 04 / Why Mars covers it */}
+      <StickyCover cover={<ValueProps />}>
+        <VideoProductBanner />
+      </StickyCover>
 
       <Ticker />
 
