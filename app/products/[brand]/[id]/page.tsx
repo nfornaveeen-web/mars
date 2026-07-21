@@ -122,11 +122,48 @@ export default async function ProductDetailPage({
     image: productImageUrls,
     sku: product.sku,
     category: product.category,
+    itemCondition: "https://schema.org/NewCondition",
     brand: {
       "@type": "Brand",
       name: brand.name,
     },
     url: productUrl,
+  };
+
+  const faqs = [
+    {
+      question: `How do I get wholesale pricing for the ${product.name}?`,
+      answer: `Request a quote through the inquiry form on this page, email sales@marstechnologyinc.com, or call +1 647 403 4735. Our sales team responds within 24 hours on business days with current tier pricing and availability.`,
+    },
+    {
+      question: `Is the ${product.name} factory-sealed and verified?`,
+      answer: `Yes. Mars Technology Inc supplies verified, factory-sealed ${brand.name} inventory with serial numbers documented on the manifest, so stock arrives shelf-ready with the manufacturer's warranty intact.`,
+    },
+    {
+      question: `What is the minimum order quantity for the ${product.name}?`,
+      answer: `We sell in wholesale quantities and minimums vary with current allocation. Tell us your target volume when you request a quote and we'll confirm available tiers for the ${product.name}.`,
+    },
+    {
+      question: `Do you ship the ${product.name} across Canada and the USA?`,
+      answer: `Yes — we ship tracked bulk orders across Canada and the United States from our Brampton, Ontario warehouse, with same-day order processing on confirmed orders.`,
+    },
+    {
+      question: `Can I combine the ${product.name} with other products in one order?`,
+      answer: `Absolutely. Most buyers mix pallets across smartphones, tablets, audio, displays, and accessories — combine ${brand.name} inventory with any other lines we carry in a single bulk order.`,
+    },
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 
   const breadcrumbJsonLd = {
@@ -163,6 +200,10 @@ export default async function ProductDetailPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Header />
       <main className="min-h-screen bg-background">
@@ -388,6 +429,37 @@ export default async function ProductDetailPage({
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* Wholesale FAQ — content mirrors the FAQPage JSON-LD above */}
+          <section className="border-t border-foreground/15 py-12 sm:py-16">
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
+              FAQ
+            </p>
+            <h2 className="mt-4 font-display text-3xl uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl">
+              Wholesale questions.
+            </h2>
+            <div className="mt-8 border-t-2 border-foreground">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="group border-b border-foreground/15"
+                >
+                  <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 py-5 font-mono text-xs uppercase tracking-[0.15em] text-foreground transition-colors hover:text-primary [&::-webkit-details-marker]:hidden">
+                    {faq.question}
+                    <span
+                      aria-hidden="true"
+                      className="shrink-0 text-primary transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="max-w-3xl pb-6 text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </section>
 
