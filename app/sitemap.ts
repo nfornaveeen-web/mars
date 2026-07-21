@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { brands, getAllCategories, products } from "@/lib/brands";
 import { absoluteUrl } from "@/lib/seo";
+import { productHref } from "@/lib/product-slugs";
 
 const blogSlugs = [
   "wholesale-pricing-strategy",
@@ -80,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productPages: MetadataRoute.Sitemap = Object.entries(products).flatMap(
     ([brand, brandProducts]) =>
       brandProducts.map((product) => ({
-        url: absoluteUrl(`/products/${brand}/${product.id}`),
+        url: absoluteUrl(productHref(brand, product.id)),
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.6,

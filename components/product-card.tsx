@@ -6,13 +6,14 @@ import Link from 'next/link'
 import { Package } from 'lucide-react'
 
 import { Product } from '@/lib/brands'
+import { productHref } from '@/lib/product-slugs'
 
 export default function ProductCard({ product }: { product: Product & { brand: string } }) {
   const [imageError, setImageError] = useState(false)
 
   return (
     <Link
-      href={`/products/${product.brand}/${product.id}`}
+      href={productHref(product.brand, product.id)}
       className="group flex h-full flex-col border border-foreground/15 bg-card transition-colors hover:border-foreground"
     >
       <div className="relative aspect-square overflow-hidden bg-secondary">

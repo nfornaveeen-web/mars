@@ -7,8 +7,14 @@ import Footer from "@/components/footer";
 import CopySkuButton from "@/components/copy-sku-button";
 import ProductGallery from "@/components/product-gallery";
 import ProductActions from "@/components/product-actions";
+import { permanentRedirect } from "next/navigation";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
-import { brands, products, getProduct, getBrandProducts } from "@/lib/brands";
+import { brands, getBrandProducts } from "@/lib/brands";
+import {
+  getAllProductParams,
+  productHref,
+  resolveProduct,
+} from "@/lib/product-slugs";
 
 type ProductDetailParams = Promise<{ brand: string; id: string }>;
 
@@ -18,10 +24,10 @@ export async function generateMetadata({
   params: ProductDetailParams;
 }): Promise<Metadata> {
   const { brand: brandSlug, id } = await params;
-  const product = getProduct(brandSlug, id);
+  const resolved = resolveProduct(brandSlug, id);
   const brand = brands.find((item) => item.slug === brandSlug);
 
-  if (!product || !brand) {
+  if (!resolved || !brand) {
     return {
       title: "Product Not Found | Mars Technology Inc",
       robots: {
@@ -31,10 +37,12 @@ export async function generateMetadata({
     };
   }
 
+  const { product, canonicalSlug } = resolved;
+
   return buildMetadata({
     title: `Buy ${product.name} Wholesale — Canada & USA`,
     description: `${product.description} SKU: ${product.sku}. Source ${brand.name} ${product.category.toLowerCase()} inventory through Mars Technology Inc's wholesale catalog.`,
-    path: `/products/${brandSlug}/${id}`,
+    path: `/products/${brandSlug}/${canonicalSlug}`,
     keywords: [
       product.name,
       brand.name,
@@ -47,13 +55,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  const params: Array<{ brand: string; id: string }> = [];
-  Object.entries(products).forEach(([brand, brandProducts]) => {
-    brandProducts.forEach((product) => {
-      params.push({ brand, id: product.id });
-    });
-  });
-  return params;
+  return getAllProductParams();
 }
 
 export default async function ProductDetailPage({
@@ -62,8 +64,16 @@ export default async function ProductDetailPage({
   params: ProductDetailParams;
 }) {
   const { brand: brandSlug, id } = await params;
-  const product = getProduct(brandSlug, id);
+  const resolved = resolveProduct(brandSlug, id);
   const brand = brands.find((b) => b.slug === brandSlug);
+
+  // Legacy ID URLs (e.g. /products/apple/a12) permanently redirect to the
+  // descriptive slug URL so old links and indexed pages carry over.
+  if (resolved?.isLegacyId && brand) {
+    permanentRedirect(productHref(brandSlug, resolved.product.id));
+  }
+
+  const product = resolved?.product;
 
   if (!product || !brand) {
     return (
@@ -111,7 +121,8 @@ export default async function ProductDetailPage({
     .filter((item) => item.id !== product.id)
     .slice(0, 4);
 
-  const productUrl = absoluteUrl(`/products/${brandSlug}/${id}`);
+  const canonicalSlug = resolved.canonicalSlug;
+  const productUrl = absoluteUrl(`/products/${brandSlug}/${canonicalSlug}`);
   const productImageUrls = galleryImages.map((image) => absoluteUrl(image));
 
   const productJsonLd = {
@@ -488,7 +499,7 @@ export default async function ProductDetailPage({
                 {relatedProducts.map((relatedProduct, index) => (
                   <Link
                     key={`${brand.slug}-${relatedProduct.id}`}
-                    href={`/products/${brand.slug}/${relatedProduct.id}`}
+                    href={productHref(brand.slug, relatedProduct.id)}
                     className="group flex h-full flex-col border border-foreground/15 bg-card transition-colors hover:border-foreground"
                   >
                     <div className="aspect-square overflow-hidden bg-secondary p-6">

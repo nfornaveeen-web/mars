@@ -13,6 +13,7 @@ import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 import LeadModal from "@/components/lead-modal";
 import { buildMetadata } from "@/lib/seo";
+import { productHref } from "@/lib/product-slugs";
 import {
   Carousel,
   CarouselContent,
@@ -44,7 +45,7 @@ const FEATURED_PRODUCTS = [
     statement:
       "The flagship your customers walk in asking for — sealed, verified, ready to retail.",
     meta: "Bulk pricing available",
-    href: "/products/apple/a12",
+    href: productHref("apple", "a12"),
     image:
       "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-compare-iphone-17-pro-202509?wid=400&hei=512&fmt=png-alpha&.v=M0dlUVBobHVpY1h1dmlaR3RZekpEMi9sbCsxVVJmYjNiS29STjQrZEV5NnNlL1VpWDFHcHBMQXVUWWdWdkZZNGJPbDJJWDFrVGJEYlIxTitTcHhVWldNTk4rSDJkMy8vL20va2hrM1NheXZ4VldteDRHenNWeThpV3EzUWVVd2o",
     cardClassName: "bg-muted",
@@ -55,7 +56,7 @@ const FEATURED_PRODUCTS = [
     statement:
       "Android's top shelf — for stores that lead with premium and restock weekly.",
     meta: "Fast-moving Samsung inventory",
-    href: "/products/samsung/s11",
+    href: productHref("samsung", "s11"),
     image:
       "/products/Samsung/in-galaxy-s25-s938-sm-s938bztbins-thumb-544702943.png",
     cardClassName: "bg-muted",
@@ -66,7 +67,7 @@ const FEATURED_PRODUCTS = [
     statement:
       "The basket-builder — premium audio that lifts every ticket it touches.",
     meta: "Wholesale audio availability",
-    href: "/products/apple/a26",
+    href: productHref("apple", "a26"),
     image: "/products/airpods_max_stardust__l9lr6719rmaa_large.png",
     cardClassName: "bg-muted",
   },
